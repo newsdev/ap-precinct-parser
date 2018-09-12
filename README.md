@@ -1,11 +1,16 @@
 # ap-precinct-parser
 A quick parser for AP's precinct-level data files.
 
+## Installation
+```
+pip install -e git+git@github.com:newsdev/ap-precinct-parser.git#egg=ap-precinct-parser
+```
+
 ## Usage
 ```bash
 export AP_FTP_USER=ftpftpuser
 export AP_FTP_PASS=password
-apftp /NY/ad/36376.txt
+apftp /NY/ad/36376.txt > results.csv
 ```
 
 ## Output
