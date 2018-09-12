@@ -27,7 +27,7 @@ def main():
     ftp_path = None
 
     if not args.ftp_path:
-        raise ValueError("You must pass in a racedate if one cannot be found in the final results filename.")
+        raise ValueError("Please pass in the path to the FTP file you'd like to process, e.g., /NY/ad/36376.txt.")
     else:
         ftp_path = args.ftp_path
 
