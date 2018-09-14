@@ -76,11 +76,9 @@ def produce_output(raceid, result_path):
             writer.writerow(row)
 
 def clean_bools(race):
-    bools_to_clean = ["test", "usejr", "incumbent"]
-    for b in bools_to_clean:
-        race[b] = False
-        if race[b] != '':
-            race[b] = True
+    race['test'] = False
+    if race["test"] == 't':
+        race['test'] = True
     return race
 
 def format_row(row):
@@ -95,10 +93,21 @@ def format_row(row):
     def _prepare(candidate_list):
         """
         * Totals votes for this race and gives the candidate pct.
+        * Fixes usejr and incumbent.
         """
         total_votes = sum([int(candidate['votecount']) for candidate in candidate_list])
-        
         for candidate in candidate_list:
+
+            if candidate['incumbent'] == "1":
+                candidate['incumbent'] = True
+            else:
+                candidate['incumbent'] = False
+            
+            if candidate['usejr'] == "1":
+                candidate['usejr'] = True
+            else:
+                candidate['usejr'] = False
+
             candidate['votecount'] = int(candidate['votecount'])
             candidate['totalvotes'] = total_votes
             if candidate['votecount'] > 0:

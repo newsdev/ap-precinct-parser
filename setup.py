@@ -11,7 +11,7 @@ def read(filename):
 
 setup(
     name='ap-precinct-parser',
-    version='0.1',
+    version='0.2',
     author='Annie Daniel, Jeremy Bowers',
     author_email='annie.daniel@nytimes.com, jeremy.bowers@nytimes.com',
     url='https://github.com/newsdev/ap-precinct-parser',
